@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Alumnos - Árbol Binario de Búsqueda</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Registro de Alumnos - Árbol Binario de Búsqueda</h1>
+        <p>ABB en memoria, reutilizando la lógica C# del proyecto de consola.</p>
+    </header>
+    <main>
+        <aside class="panel">
+            <h2>Operaciones</h2>
+            <form id="alumno-form">
+                <label for="matricula">Matrícula</label>
+                <input id="matricula" type="number" min="1" step="1" placeholder="2050">
+                <label for="nombre">Nombre</label>
+                <input id="nombre" type="text" placeholder="Nombre completo">
+                <label for="carrera">Carrera</label>
+                <input id="carrera" type="text" placeholder="Carrera">
+                <button type="submit">Insertar</button>
+            </form>
+            <button id="buscar">Buscar</button>
+            <button id="eliminar" class="danger">Eliminar</button>
+            <button id="prueba">Cargar datos de prueba</button>
+            <button id="limpiar" class="danger">Limpiar árbol</button>
+            <p id="mensaje" role="status"></p>
+        </aside>
+        <section class="contenido">
+            <section class="estadisticas">
+                <article><span>Altura</span><strong id="altura">0</strong></article>
+                <article><span>Nodos</span><strong id="nodos">0</strong></article>
+                <article><span>Mínimo</span><strong id="minimo">-</strong></article>
+                <article><span>Máximo</span><strong id="maximo">-</strong></article>
+            </section>
+            <section class="arbol-panel">
+                <div class="toolbar">
+                    <button id="zoom-menos" aria-label="Alejar">−</button>
+                    <button id="zoom-mas" aria-label="Acercar">+</button>
+                    <span id="zoom-texto">100%</span>
+                </div>
+                <div id="svg-contenedor"><svg id="arbol-svg" role="img" aria-label="Dibujo del árbol"></svg></div>
+            </section>
+            <section class="recorridos">
+                <h2>Recorridos</h2>
+                <div class="recorrido-controles">
+                    <button data-recorrido="anchura">Anchura</button>
+                    <button data-recorrido="preorden">Preorden</button>
+                    <button data-recorrido="inorden">Inorden</button>
+                    <button data-recorrido="postorden">Postorden</button>
+                    <label>Velocidad <input id="velocidad" type="range" min="100" max="1500" value="500" step="100"></label>
+                </div>
+                <p id="resultado-recorrido">Selecciona un recorrido.</p>
+            </section>
+            <section>
+                <h2>Alumnos (inorden)</h2>
+                <table>
+                    <thead><tr><th>Matrícula</th><th>Nombre</th><th>Carrera</th></tr></thead>
+                    <tbody id="tabla-alumnos"></tbody>
+                </table>
+            </section>
+        </section>
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>
