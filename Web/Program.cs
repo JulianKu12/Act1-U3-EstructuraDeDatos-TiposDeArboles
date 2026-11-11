@@ -1,4 +1,4 @@
-dotnet run --project .\Web\RegistroAlumnosABB.Web.csprojdotnet run --project .\Web\RegistroAlumnosABB.Web.csprojdotnet run --project .\Web\RegistroAlumnosABB.Web.csprojdotnet run --project .\Web\RegistroAlumnosABB.Web.csprojdotnet run --project .\Web\RegistroAlumnosABB.Web.csprojdotnet run --project .\Web\RegistroAlumnosABB.Web.csprojdotnet run --project .\Web\RegistroAlumnosABB.Web.csprojhttp://localhost:5000http://localhost:5000using RegistroAlumnosABB;
+using RegistroAlumnosABB;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 builder.Services.AddSingleton<ArbolBinarioBusqueda>();

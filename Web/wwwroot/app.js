@@ -167,7 +167,9 @@ document.querySelectorAll("[data-recorrido]").forEach((boton) => {
                 dibujar(null, visitados, ordenes);
                 document.querySelector("#resultado-recorrido").textContent =
                     `Visitando ${i + 1}: ${datos.nodos[i].matricula}`;
-                await new Promise((resolver) => setTimeout(resolver, Number(document.querySelector("#velocidad").value)));
+                const valorVelocidad = Number(document.querySelector("#velocidad").value);
+                const retardo = 1600 - valorVelocidad;
+                await new Promise((resolver) => setTimeout(resolver, retardo));
             }
             document.querySelector("#resultado-recorrido").textContent =
                 `${tipo}: ${datos.nodos.map((nodo) => nodo.matricula).join(", ")}`;
